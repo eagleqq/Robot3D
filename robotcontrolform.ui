@@ -1,0 +1,818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>RobotControlForm</class>
+ <widget class="QWidget" name="RobotControlForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>546</width>
+    <height>607</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_4">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_16">
+     <item>
+      <widget class="QGroupBox" name="groupBoxGlobalSetting">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox
+{
+border: 2px solid gray;
+border-radius:5px;
+margin-top:2ex;
+font-family:楷体;
+font:bold18px;
+ 
+}
+ 
+QGroupBox::title
+{
+subcontrol-origin:margin;
+subcontrol-position:top center;
+padding:0 3px;
+}</string>
+       </property>
+       <property name="title">
+        <string>全局设置</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_14">
+        <item>
+         <layout class="QHBoxLayout" name="horizontalLayout_13">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBoxGrid">
+            <property name="text">
+             <string>网格</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBoxWorldCoordinate">
+            <property name="text">
+             <string>世界坐标系</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+     </item>
+     <item>
+      <widget class="QGroupBox" name="groupBoxEnviromentSetting">
+       <property name="styleSheet">
+        <string notr="true">QGroupBox
+{
+border: 2px solid gray;
+border-radius:5px;
+margin-top:2ex;
+font-family:楷体;
+font:bold18px;
+ 
+}
+ 
+QGroupBox::title
+{
+subcontrol-origin:margin;
+subcontrol-position:top center;
+padding:0 3px;
+}</string>
+       </property>
+       <property name="title">
+        <string>环境设置</string>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout_15">
+        <item>
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>26</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBoxDesk">
+          <property name="text">
+           <string>桌子</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_5">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>25</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item>
+         <widget class="QCheckBox" name="checkBoxXY">
+          <property name="text">
+           <string>XY平台</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer_6">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>26</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="minimumSize">
+      <size>
+       <width>450</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="maximumSize">
+      <size>
+       <width>700</width>
+       <height>16777215</height>
+      </size>
+     </property>
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="jointTab">
+      <attribute name="title">
+       <string>关节</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_8">
+       <item>
+        <widget class="QGroupBox" name="groupBoxRobot">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox
+{
+border: 2px solid gray;
+border-radius:5px;
+margin-top:2ex;
+font-family:楷体;
+font:bold18px;
+ 
+}
+ 
+QGroupBox::title
+{
+subcontrol-origin:margin;
+subcontrol-position:top center;
+padding:0 3px;
+}</string>
+         </property>
+         <property name="title">
+          <string>机械手</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <item>
+             <widget class="QCheckBox" name="checkBoxJ1">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label">
+              <property name="text">
+               <string>J1:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="sliderQ1">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="valueQ1">
+              <property name="text">
+               <string>value</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <item>
+             <widget class="QCheckBox" name="checkBoxJ2">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_3">
+              <property name="text">
+               <string>J2:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="sliderQ2">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="valueQ2">
+              <property name="text">
+               <string>value</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_4">
+            <item>
+             <widget class="QCheckBox" name="checkBoxJ3">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_5">
+              <property name="text">
+               <string>J3:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="sliderQ3">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="valueQ3">
+              <property name="text">
+               <string>value</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_5">
+            <item>
+             <widget class="QCheckBox" name="checkBoxJ4">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_7">
+              <property name="text">
+               <string>J4:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="sliderQ4">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="valueQ4">
+              <property name="text">
+               <string>value</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout">
+            <item>
+             <widget class="QCheckBox" name="checkBoxJ5">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_9">
+              <property name="text">
+               <string>J5:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="sliderQ5">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="valueQ5">
+              <property name="text">
+               <string>value</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_7">
+            <item>
+             <widget class="QCheckBox" name="checkBoxJ6">
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="label_10">
+              <property name="text">
+               <string>J6:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QSlider" name="sliderQ6">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="valueQ6">
+              <property name="text">
+               <string>value</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButtonTeach">
+            <property name="text">
+             <string>示教点</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QGroupBox" name="groupBoxXY">
+         <property name="styleSheet">
+          <string notr="true">QGroupBox
+{
+border: 2px solid gray;
+border-radius:5px;
+margin-top:2ex;
+font-family:楷体;
+font:bold18px;
+ 
+}
+ 
+QGroupBox::title
+{
+subcontrol-origin:margin;
+subcontrol-position:top center;
+padding:0 3px;
+}</string>
+         </property>
+         <property name="title">
+          <string>XY平台</string>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_17">
+            <item>
+             <widget class="QLabel" name="label_12">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>40</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>X:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="doubleSpinBoXYP_X"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="horizontalLayout_18">
+            <item>
+             <widget class="QLabel" name="label_13">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="maximumSize">
+               <size>
+                <width>40</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>Y:</string>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QDoubleSpinBox" name="doubleSpinBoXYP_Y"/>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>点管理</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QTableWidget" name="tableWidget">
+         <column>
+          <property name="text">
+           <string>J1</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>J2</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>J3</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>J4</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>J5</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>J6</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>X</string>
+          </property>
+         </column>
+         <column>
+          <property name="text">
+           <string>Y</string>
+          </property>
+         </column>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_6">
+         <item>
+          <widget class="QLabel" name="label_14">
+           <property name="maximumSize">
+            <size>
+             <width>98</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="text">
+            <string>间隔时间(ms):</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinBoxInterval">
+           <property name="maximum">
+            <number>9999</number>
+           </property>
+           <property name="value">
+            <number>10</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonStart">
+           <property name="text">
+            <string>开始</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonStop">
+           <property name="text">
+            <string>停止</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="debugTab">
+      <attribute name="title">
+       <string>参数调试</string>
+      </attribute>
+      <layout class="QHBoxLayout" name="horizontalLayout_9">
+       <item>
+        <layout class="QVBoxLayout" name="verticalLayout_5">
+         <item>
+          <widget class="QGroupBox" name="groupBox_Z">
+           <property name="styleSheet">
+            <string notr="true">QGroupBox
+{
+border: 2px solid gray;
+border-radius:5px;
+margin-top:2ex;
+font-family:楷体;
+font:bold18px;
+ 
+}
+ 
+QGroupBox::title
+{
+subcontrol-origin:margin;
+subcontrol-position:top center;
+padding:0 3px;
+}</string>
+           </property>
+           <property name="title">
+            <string>Z</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_6">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_8">
+              <item>
+               <widget class="QLabel" name="label_2">
+                <property name="text">
+                 <string>d=</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_d0"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_d1"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_d2"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_d3"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_d4"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_d5"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_d6"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_10">
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>JVars=</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_JVars0"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_JVars1"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_JVars2"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_JVars3"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_JVars4"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_JVars5"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_JVars6"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QGroupBox" name="groupBox_X">
+           <property name="styleSheet">
+            <string notr="true">QGroupBox
+{
+border: 2px solid gray;
+border-radius:5px;
+margin-top:2ex;
+font-family:楷体;
+font:bold18px;
+ 
+}
+ 
+QGroupBox::title
+{
+subcontrol-origin:margin;
+subcontrol-position:top center;
+padding:0 3px;
+}</string>
+           </property>
+           <property name="title">
+            <string>X</string>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout_7">
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_11">
+              <item>
+               <widget class="QLabel" name="label_6">
+                <property name="text">
+                 <string>a=</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_a0"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_a1"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_a2"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_a3"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_a4"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_a5"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_a6"/>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_12">
+              <item>
+               <widget class="QLabel" name="label_8">
+                <property name="text">
+                 <string>alpha=</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_alpha0"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_alpha1"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_alpha2"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_alpha3"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_alpha4"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_alpha5"/>
+              </item>
+              <item>
+               <widget class="QDoubleSpinBox" name="doubleSpinBox_alpha6"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>40</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
